@@ -7,6 +7,10 @@
   "license": "Unlicensed",
   "private": true,
   "scripts": {
-    "sync": "aws s3 cp . s3://suarez-www --recursive --exclude '.git/*' --exclude package.json"
+    "start": "http-server -o",
+    "sync": "./sync.sh"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
   }
 }

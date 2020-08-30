@@ -10,7 +10,10 @@ CDN=EA6UPFC4XHI58
 
 aws s3 cp . "s3://$BUCKET" --recursive \
   --exclude '.git/*' \
+  --exclude 'node_modules/*' \
+  --exclude .gitignore \
   --exclude package.json \
+  --exclude package-lock.json \
   --exclude CNAME \
   --exclude README.md \
   --exclude *.sh

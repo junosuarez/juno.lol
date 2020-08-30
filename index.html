@@ -1,11 +1,45 @@
 <html>
 
 <head>
+  <title>juno suárez, starry-eyed earthling.</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: sans-serif;
       color: #433;
+      background: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      padding: 1em;
+      margin: 0 auto;
+      background: #ffffff;
+      height: 100%;
+      box-shadow: 0px -10px 90px #0003;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    main {
+      margin-bottom: 32px;
+    }
+
+    footer {
+      text-align: center;
     }
 
     address {
@@ -15,25 +49,91 @@
 
     a {
       text-decoration: none;
+      color: mediumblue;
     }
 
     .deprecated {
       text-decoration: line-through;
     }
 
+    h1::before {
+      height: 250px;
+      width: 250px;
+      display: block;
+      background: url('./profile.jpg');
+      background-size: contain;
+      content: '';
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+
+
+    h1 {
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-style: italic;
+    }
+
+
+
+    .e {
+      font-size: 32px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+
+    li a {
+      display: flex;
+      flex-direction: column;
+
+      flex: 0;
+      text-align: center;
+    }
+
   </style>
 </head>
 
 <body>
-  <h1>suarez.systems</h1>
-
-  <ul>
-    <li><a href="https://github.com/junosuarez" rel="me">💻 github</a></li>
-    <li>✉️juno at suarez.email</li>
-    <li><a href="https://pronoun.is/they">they / them pronouns</a></li>
-  </ul>
-
-  <address>2020 CE, terra</address>
+  <div class="container">
+    <header>
+      <h1>juno suárez</h1>
+      <p class="tagline">starry-eyed earthling. <a href="https://pronoun.is/they">they/them</a></p>
+    </header>
+    <main>
+      <ul>
+        <li>
+          <a href="https://github.com/junosuarez" rel="me">
+            <span aria-label="" class="e">💻</span>
+            github
+          </a>
+        </li>
+        <li>
+          <a class="nospam" href="mailto:junoATsuarez.email">
+            <span aria-label="" class="e">✉️</span>
+            <span>juno<span class="nospam">AT</span>suarez.email</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <address>2020 CE, terra</address>
+    </footer>
+  </div>
+  <script>
+    [
+      ['href', 'a'],
+      ['textContent', 'span']
+    ]
+      .map(([a, s]) => [a, document.querySelector(s + '.nospam')])
+      .map(([a, e]) => e[a] = e[a].replace('AT', '@'))
+  </script>
 </body>
 
 </html>
