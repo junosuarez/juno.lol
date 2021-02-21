@@ -1,2 +1,2 @@
-# suarez.systems
+# juno.lol
 http
