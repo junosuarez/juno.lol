@@ -31,11 +31,11 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 2em;
     }
 
     main {
-      margin-bottom: 32px;
+      margin-bottom: 2em;
     }
 
     footer {
@@ -64,13 +64,13 @@
       background-size: contain;
       content: '';
       border-radius: 50%;
-      margin-bottom: 16px;
+      margin-bottom: 1em;
     }
 
 
 
     h1 {
-      margin-bottom: 16px;
+      margin-bottom: 1em;
     }
 
     .tagline {
@@ -80,7 +80,7 @@
 
 
     .e {
-      font-size: 32px;
+      font-size: 2em;
     }
 
     ul {
@@ -97,6 +97,10 @@
       text-align: center;
     }
 
+    #contacts {
+      margin-bottom: 2em;
+    }
+
   </style>
 </head>
 
@@ -107,11 +111,17 @@
       <p class="tagline">starry-eyed earthling. <a href="https://pronoun.is/they">they/them</a></p>
     </header>
     <main>
-      <ul>
+      <ul id="contacts">
         <li>
           <a href="https://github.com/junosuarez" rel="me">
             <span aria-label="" class="e">💻</span>
             github
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/junosz" rel="me">
+            <span aria-label="" class="e">🐣</span>
+            @junosz
           </a>
         </li>
         <li>
@@ -121,9 +131,13 @@
           </a>
         </li>
       </ul>
+      <ul id="projects">
+        <li>myriad<br/><em>coming soon</em></li>
+        <li>lupine<br/><em>coming soon</em></li>
+      </ul>
     </main>
     <footer>
-      <address>2020 CE, terra</address>
+      <address>2021 CE, earth</address>
     </footer>
   </div>
   <script>
