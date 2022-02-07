@@ -60,18 +60,6 @@
       text-decoration: line-through;
     }
 
-    h1::before {
-      height: 250px;
-      width: 250px;
-      display: block;
-      background: url('./profile.jpg');
-      background-size: contain;
-      content: '';
-      border-radius: 50%;
-      margin-bottom: 1em;
-    }
-
-
 
     h1 {
       margin-bottom: 1em;
@@ -116,12 +104,6 @@
     </main>
   </div>
   <script>
-    [
-      ['href', 'a'],
-      ['textContent', 'span']
-    ]
-      .map(([a, s]) => [a, document.querySelector(s + '.nospam')])
-      .map(([a, e]) => e[a] = e[a].replace('AT', '@'));
     setTimeout(() => { alert('probably a virus or smthg idk') }, 2000)
   </script>
 </body>
