@@ -1,0 +1,23 @@
+{
+  "subject": "acct:junosz@macaw.social",
+  "aliases": [
+    "https://macaw.social/@junosz",
+    "https://macaw.social/users/junosz"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://macaw.social/@junosz"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://macaw.social/users/junosz"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://macaw.social/authorize_interaction?uri={uri}"
+    }
+  ]
+}
