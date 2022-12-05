@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>junosz</title>
+  <title>juno lol</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="internet">
@@ -14,27 +14,7 @@
 
     body {
       font-family: sans-serif;
-      color: #433;
-      background: #333;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      padding: 1em;
-      margin: 0 auto;
-      background: #666;
-      min-height: calc(100vh - 4em);
-      box-shadow: 0px -10px 90px #0003;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-bottom: 2em;
+      background: black;
     }
 
     main {
@@ -91,22 +71,39 @@
     #contacts {
       margin-bottom: 2em;
     }
-    
-h2 {
-  -webkit-animation: filter-animation 8s infinite;
-  animation: filter-animation 8s infinite;
-color: #009;
+
+pre {
+color: rgb(196, 62, 171);
+width: 80ch;
+/* background-color: orange; */
+font-weight: bold;
+margin: auto;
 }
 
+a{
+  color: inherit;
+  text-decoration: underline;
+}
+
+.fx {
+  -webkit-animation: filter-animation 8s infinite;
+  animation: filter-animation 8s infinite;
+}
+@media (prefers-reduced-motion) {
+  .fx {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
 @-webkit-keyframes filter-animation {
   0% {
     -webkit-filter: hue-rotate(0deg);
   }
-  
+
   50% {
     -webkit-filter: hue-rotate(100deg);
   }
-  
+
   100% {
     -webkit-filter: hue-rotate(0deg);
   }
@@ -116,29 +113,52 @@ color: #009;
   0% {
     filter: hue-rotate(0deg);
   }
-  
+
   50% {
     filter: hue-rotate(100deg);
   }
-  
+
   100% {
     filter: hue-rotate(0deg);
   }
 }
 
-  
+.alt {
+  position: absolute;
+  user-select: none;
+  left: -9999px;
+}
+
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1><a href="https://macaw.social/@junosz" rel="me">@junosz@macaw.social</a></h1>
-    </header>
-    <main>
-      <h2>it is now safe to turn off your computer</h2>
-    </main>
-  </div>
+  <main aria-label="juno lol">
+<pre><span aria-hidden="true">
+
+                                                    .dPYb,             .dPYb,
+                                                     IP'`Yb             QP'`Yb
+       gg                                            I8  8I             I8  8I
+       ""                                            I8  8'             I8  8'
+       gg  gg      gg   ,ggg,,ggg,     ,ggggg,       I8 dP    ,ggggg,   I8 dP
+       8I  I8      8I  ,8" "8P" "8,   dP"  "Y8ggg    I8dP    dP"  "Y8gggI8dP
+      ,8I  I8,    ,8I  I8   8I   8I  i8'    ,8I      I8P    i8'    ,8I  I8P
+    _,d8I ,d8b,  ,d8b,,dP   8I   Yb,,d8,   ,d8'     ,d8b,_ ,d8,   ,d8' ,d8b,_
+ ,888P"8888P'"Y88P"`Y88P'   8I   `Y8P"68888P?       8P'"Y88P"Y8888P"   8P'"Y8b,
+,d8P  ,d8I'                                                                  `Yb
+88' ,dP'8I      </span>amateur systems practitioner, californian exile<span aria-hidden="true">               I8
+8P ,8"  8I                                                                    I8
+8I I8   8I     </span><a href="https://macaw.social/@junosz" rel="me">@juno@macaw.social</a><span aria-hidden="true">                                             8P
+8b `8, ,8I    dg.                                                            68'
+8B, `68P?   ,d@`                                                            gY'
+8I&       ,@b`
+`@&Q. <span class="fx">i t  i s  n o w  s a f e  t o  t u r n  o f f  y o u r  c o m p u t e r</span>
+  `qggggg?
+     ""
+</span></pre>
+<span class="alt">it is now safe to turn off your computer</span>
+</main>
+
 </body>
 
 </html>
