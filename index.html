@@ -17,6 +17,13 @@
       background: black;
     }
 
+    @media (max-width: 600px) {
+      /* silly hack for "responsive" on mobile - just tilt the whole thing sideways */
+      body {
+        transform: rotate(90deg) translateX(50%);
+      }
+    }
+
     main {
       margin-bottom: 2em;
 	    display: flex;
