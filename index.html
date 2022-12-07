@@ -3,8 +3,9 @@
 <head>
   <title>juno lol</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="@juno@macaw.social">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
 
     * {
@@ -17,17 +18,12 @@
       background: black;
     }
 
-    @media (max-width: 600px) {
-      /* silly hack for "responsive" on mobile - just tilt the whole thing sideways */
-      body {
-        transform: rotate(90deg) translateX(50%);
-      }
-    }
-
     main {
-      margin-bottom: 2em;
+      height: calc(100vh - env(safe-area-inset-bottom));
+      width: 100vw;
 	    display: flex;
 	    justify-content: center;
+      align-items: center;
     }
 
     pre {
@@ -88,14 +84,72 @@
       user-select: none;
       left: -9999px;
     }
+
+    #measure {
+      font: bold 1rem monospace;
+      visibility: hidden;
+      position: absolute;
+      user-select: none;
+    }
   </style>
 </head>
 
 <body>
-<main aria-label="juno lol">
-<pre><tt aria-hidden="true">
+<span id="measure">0</span>
+<script>
+const PRE_W = 80;
+const PRE_H = 19;
+const MAX_W = 960;
 
-                                                     qPYb,              qPYb,
+// at first page load, we want to measure the font so we can set the font-size
+// so that we can fit everything on smaller screens
+const m = document.getElementById('measure')
+let sz = 1.0;
+let fullWidth;
+const sizes = Array(20).fill().map((_, i) => {
+  m.style.fontSize = i + 'px'
+  const rect = document.getElementById('measure').getBoundingClientRect();
+  return {value: i, width: rect.width * PRE_W, height: rect.height * PRE_H}
+}).reverse()
+console.log(sizes)
+
+function setSize(viewport) {
+  // find the biggest size that fits within the viewport
+  const size = sizes.find((size) => {
+    // if (viewport.width < 600) {
+    //   // for small sizes, the whole thing rotates 90deg, so swap height/width
+    //   return size.width < viewport.height
+    //   && size.width < window.innerHeight // fix for viewport browser ui
+    //   && size.width <= MAX_W
+    //   && size.height < viewport.width
+    // }
+    return size.width < viewport.width
+      && size.width <= MAX_W
+      && size.height < viewport.height
+    })
+    console.log(viewport.width, viewport.height)
+  document.body.style.fontSize = size.value + 'px'
+}
+
+function onResize(e) {
+  if (onResize.locked) { return }
+  onResize.locked = true;
+  const viewport = e.target;
+
+  requestAnimationFrame(() => {
+    setSize(viewport)
+    onResize.locked = false;
+  })
+}
+
+// set size synchronously on first render, and subsequently on resize
+setSize(window.visualViewport)
+window.visualViewport.addEventListener('resize', onResize)
+
+</script>
+<main aria-label="juno lol">
+<pre><tt aria-hidden="true"
+>                                                     qPYb,              qPYb,
                                                      IP'`Yb             QP'`Yb
        gg                                            I8  8I             I8  8I
        ""                                            I8  8'             I8  8'
